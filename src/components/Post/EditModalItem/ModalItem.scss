@@ -1,0 +1,41 @@
+.user_setting {
+  position: fixed;
+  top: 15%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 60%;
+  max-width: 600px;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.93);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.close-btn {
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.update-user-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.update-user-container input {
+  width: 100%;
+  height: 40px;
+  margin-top: 12px;
+  // color: rgba(255, 255, 255, 0.93);
+}
+
+.update-user-container button {
+  font-size: 20px;
+  width: 100%;
+  // padding: 10px 0;
+  margin-top: 12px;
+}
