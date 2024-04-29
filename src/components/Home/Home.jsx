@@ -184,6 +184,7 @@ const Home = ({ user }) => {
                     {item.createdBy === user.displayName && (
                       <span
                         className="text-danger d-flex align-items-center gap-1 h3"
+                        style={{ cursor: "pointer" }}
                         onClick={() => handleDeletePost(item.id)}
                       >
                         <p>Delete</p>
@@ -283,12 +284,11 @@ const Home = ({ user }) => {
                   {user ? user?.email : null}
                 </span>
                 <span className="sidebar-btn">
-                  <Link to="/profile">Change</Link>
+                  <Link to="/profile">Progile</Link>
                 </span>
               </div>
               <div className="suggestions-header grid">
-                <span className="suggestions-text">Suggestions for you</span>
-                <span className="sidebar-btn-alt">See all</span>
+                <span className="suggestions-text">Friends & Other</span>
               </div>
               {users
                 .filter((item) => item.userName !== user.displayName)
@@ -306,7 +306,7 @@ const Home = ({ user }) => {
                       {item.userName}
                     </span>
                     <Link to={`/${item.userName}`} className="sidebar-btn">
-                      Follow
+                      Profile
                     </Link>
                   </div>
                 ))}

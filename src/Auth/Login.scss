@@ -1,0 +1,35 @@
+.login-container {
+  background-image: url("../assets/auth-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-content {
+  max-width: 400px;
+  width: 100%;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 30px;
+}
+
+.login-card {
+  border-radius: 10px;
+}
+
+.link-primary {
+  color: dodgerblue;
+}
+
+.alert {
+  margin-bottom: 20px;
+}

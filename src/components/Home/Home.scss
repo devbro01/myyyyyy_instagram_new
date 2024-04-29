@@ -62,13 +62,8 @@ header {
   gap: 4%;
 }
 
-.logo {
-  font-family: "Satisfy", cursive;
-}
-
 .logo-nav {
-  font-size: 4rem;
-  padding: 0 1rem;
+  padding: 20px 1rem 0 0;
 }
 
 .searchbar {
@@ -193,20 +188,13 @@ header {
 }
 
 .sidebar {
-  grid-column: 4/5;
+  grid-column: 3/4;
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-/*           CARDS            */
-.card-wrapper {
-  width: 100%;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  flex-flow: column;
-}
-
+/*CARDS*/
 .card-header {
   width: 100%;
   padding: 0.8rem;
@@ -350,12 +338,12 @@ header {
   color: #44aaff;
 }
 
-/*       SIDEBAR           */
+/*       SIDEBAR-Content       */
 .sidebar-menu-container {
-  position: sticky;
+  position: relative;
   width: 100%;
-  top: 8.6rem;
-  left: 0;
+  top: 0;
+  left: 2rem;
 }
 
 .sidebar-card {
@@ -368,14 +356,15 @@ header {
 }
 
 .sidebar-img {
+  margin-right: 5px;
   grid-column: 1/2;
   grid-row: 1/3;
   border-radius: 50%;
 }
 
 .sidebar-hd-img {
-  width: 5.8rem;
-  height: 5.8rem;
+  width: 5rem;
+  height: 5rem;
 }
 
 .side-bar-img-alt {

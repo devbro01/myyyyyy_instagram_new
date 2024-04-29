@@ -1,5 +1,3 @@
-/** @format */
-
 import { configureStore } from "@reduxjs/toolkit";
 import loginSlice from "./loginSlice";
 import postsSlice from "../postsSlice/postsSlice";

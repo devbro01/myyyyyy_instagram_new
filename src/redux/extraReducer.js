@@ -1,5 +1,3 @@
-/** @format */
-
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import {
   createUserWithEmailAndPassword,
@@ -9,16 +7,20 @@ import {
 import { auth, firestore, storage } from "../firebase/firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
+
+// create user
 export const createUser = createAsyncThunk(
   "user/createUserAndProfile",
   async (data, thunkAPI) => {
-    console.log(data);
     try {
-      const user = await createUserWithEmailAndPassword(
+      // Create user
+      const userCredential = await createUserWithEmailAndPassword(
         auth,
         data.email,
         data.password
       );
+
+      // Add user profile data to Firestore
       const usersData = {
         userPhoto: data.photo,
         userName: data.name,
@@ -26,14 +28,20 @@ export const createUser = createAsyncThunk(
       };
       const usersRef = collection(firestore, "Users");
       await addDoc(usersRef, usersData);
-      await updateProfile(auth.currentUser, {
+
+      // Update user profile
+      await updateProfile(userCredential.user, {
         displayName: data.name,
         photoURL: data.photo,
         phoneNumber: data.phone,
       });
 
-      return user;
+      console.log("User registered successfully!");
+
+      // Return the user credential
+      return userCredential;
     } catch (error) {
+      // If an error occurs, reject the action with the error message
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -82,7 +90,7 @@ export const publishPosts = createAsyncThunk(
       const articleRef = collection(firestore, "Articles");
       await addDoc(articleRef, articleData);
 
-      return {}; // You can return data if needed
+      return {};
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -99,7 +107,7 @@ export const updateDisplayNameAsync = createAsyncThunk(
 
       return newDisplayName;
     } catch (error) {
-      return rejectWithValue("Failed update displayName");
+      return rejectWithValue("Failed displayName");
     }
   }
 );
